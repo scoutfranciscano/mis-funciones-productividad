@@ -1,0 +1,14 @@
+# Crear una lista de variables que se imprima en un .txt La idea es luego anotar cada una con un comentario que inicia con # con aspectos a tener en cuenta de esa variable.
+# Tambien sirve para luego seleccionar las variables como keep copiando y pegando y luego poniendo un # antes de la variable que no quiero usar.
+
+cat(
+  gsub(
+    paste("c(",
+          gsub(
+            paste("\"",colnames(Pro20143_EST),"\"",",\n",collapse=""),
+          pattern=" ",replacement=""),
+    ")",sep = ""),
+  pattern=",\n)",replacement="\n)"),
+file=paste(trash,"/columnas_","EK20143-EST.dsv",".txt",sep=""))
+
+file.show(file=paste(trash,"/columnas_","EK20143-EST.dsv",".txt",sep=""))
